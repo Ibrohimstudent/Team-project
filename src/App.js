@@ -11,18 +11,16 @@ import Login from "./components/Pages/Login/index"
 import Dashboard from "./components/Pages/Dashboard";
 
 
-
 function App(props) {
-    const location= useLocation()
+    const location = useLocation()
     console.log(location)
     return (
         <div className={"container-fluid p-0"}>
-            {location.pathname !== "/login" }
+            {location.pathname !== "/login"}
             <Routes>
-                <Route path={"/login"} element={<Login/>} />
-
+                <Route path={"/"} element={<Login/>}/>
                 <Route path={"/kabinet"} element={<Kabinet/>}>
-                    <Route  path={"/kabinet"} element={<Dashboard/>}/>
+                    <Route path={"/kabinet"} element={<Dashboard/>}/>
                     <Route path={"/kabinet/kurslar"} element={<Kurslar/>}/>
                     <Route path={"/kabinet/elonlar"} element={<Elonlar/>}/>
                     <Route path={"/kabinet/vebinar"} element={<Vebinar/>}/>
@@ -30,12 +28,7 @@ function App(props) {
                     <Route path={"/kabinet/category"} element={<Category/>}/>
                     <Route path={"/kabinet/kontaktlar"} element={<Kontaktlar/>}/>
                 </Route>
-
             </Routes>
-
-
-
-
         </div>
     );
 }
